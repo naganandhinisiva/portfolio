@@ -1,0 +1,351 @@
+/* 🌌 GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0f1a;
+  color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ♿ ACCESSIBILITY: FOCUS STATES */
+a:focus,
+button:focus {
+  outline: 2px solid #00e5ff;
+  outline-offset: 4px;
+}
+
+/* 🌟 HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0f1624;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
+}
+
+header h1 {
+  color: #00bcd4;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00e5ff;
+}
+
+/* 🪄 SECTION BASE */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+/* Alternating section background (visual usability) */
+.section:nth-of-type(even) {
+  background-color: #101827;
+}
+
+/* 🎬 SECTION TITLE + ENTRANCE ANIMATION */
+.section h2 {
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: subtitleFade 0.8s ease forwards;
+}
+
+@keyframes subtitleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ GLOW CONTAINER */
+.glow-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 40px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+}
+
+/* 🧠 ABOUT */
+#about p {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin-bottom: 25px;
+}
+
+#about .btn {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: #0a0f1a;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#about .btn:hover {
+  background-color: #028a9e;
+  color: #ffffff;
+}
+
+/* 💎 SKILLS ICON GRID */
+.skills-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 25px 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+}
+
+.skill-card img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* 🚀 PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+}
+
+.project-card h3 {
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #d1d5db;
+}
+/* 🔗 Project View Link Color Fix */
+.project-card a {
+  color: #00bcd4;          /* Blue theme color */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #00e5ff;          /* Lighter blue on hover */
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+}
+
+
+/* 💼 EXPERIENCE */
+.experience-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  width: 70%;
+  max-width: 800px;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.25);
+}
+
+.experience-card strong {
+  color: #00bcd4;
+}
+
+/* 📬 CONTACT */
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  width: 60%;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
+}
+
+.contact-box a {
+  color: #00bcd4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  color: #00e5ff;
+}
+
+/* 📱 MOBILE USABILITY */
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .skills-icons-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-card,
+  .contact-box {
+    width: 95%;
+  }
+}
+
+/* ♿ REDUCED MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* 🎓 EDUCATION – Enhanced */
+.education-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 14px;
+  width: 70%;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
+  border-left: 4px solid #00bcd4;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+}
+
+.edu-year {
+  color: #00e5ff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.education-card h3 {
+  color: #00bcd4;
+  margin: 10px 0 5px;
+}
+
+.edu-college {
+  color: #d1d5db;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* 📊 CGPA BAR */
+.cgpa-box span {
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.cgpa-bar {
+  background: #1f2937;
+  height: 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.cgpa-fill {
+  width: 82.6%;
+  height: 100%;
+  background: linear-gradient(90deg, #00bcd4, #00e5ff);
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+/* 🏷️ TAGS */
+.edu-tags {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edu-tags span {
+  background: rgba(0, 188, 212, 0.15);
+  color: #00e5ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
